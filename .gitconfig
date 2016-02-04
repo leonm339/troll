@@ -1,0 +1,10 @@
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+[user]
+	name = leonm339
+[user]
+	email = leonm339@gmail.com
+[gui]
+	recentrepo = C:/wamp/www/troll
