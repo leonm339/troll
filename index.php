@@ -5,31 +5,22 @@ include_once 'database.php';
 ?>
 <div class="tabs">
     <ul class="tab-links">
-        <li class="active"><a href="#tab1">New</a></li>
-        <li><div class="dropdown">
-            <button class="dropbtn"><a href="#tab2">Top</a></button>
-            <div class="dropdown-content">
-            <a href="#tab21">Teden</a>
-            <a href="#tab22">Mesec</a>
-            <a href="#tab23">Leto</a>
-            <a href="#tab24">Vse</a>
-        </div></li>
-        <li><div class="dropdown">
-            <button class="dropbtn"><a href="#tab3">Worst</a></button>
-            <div class="dropdown-content">
-            <a href="#tab31">Teden</a>
-            <a href="#tab32">Mesec</a>
-            <a href="#tab33">Leto</a>
-            <a href="#tab34">Vse</a>
-        </div></li>
-        <li>        <div class="dropdown">
-            <button class="dropbtn"><a href="#tab4">My</a></button>
-            <div class="dropdown-content">
-            <a href="#tab41">Teden</a>
-            <a href="#tab42">Mesec</a>
-            <a href="#tab43">Leto</a>
-            <a href="#tab44">Vse</a>
-        </div></li>
+        <li class="active"><a href="#tab1">New</a></li><li>
+        <a href="#tab2">Top</a>
+        <ul>
+            <li><a href="#TopTeden">Teden</a></li>
+            <li><a href="#TopMesec">Mesec</a></li>
+            <li><a href="#TopLeto">Leto</a></li>
+            <li><a href="#TopVse">Vse</a></li>
+        </ul></li><li>
+        <a href="#tab3">Worst</a>
+        <ul>
+            <li><a href="#WorstTeden">Teden</a></li>
+            <li><a href="#WorstMesec">Mesec</a></li>
+            <li><a href="#WorstLeto">Leto</a></li>
+            <li><a href="#WorstVse">Vse</a></li>
+        </ul></li><li>
+        <a href="#tab4">My</a></li>
     </ul>
 
     <div class="tab-content">
@@ -133,12 +124,15 @@ include_once 'database.php';
             }
             ?>
         </div>
-            <div id="tab21" class="tab">
+
+        <div id="TopTeden" >
             <?php
+            $date = date("Ymd", strtotime("-7 days"));
             $query = "SELECT p.*, u.username 
-              FROM posts p INNER JOIN users u ON p.user_id=u.id
-              WHERE (p.user_id = ".$_SESSION['user_id'].") AND (p.date_add > DATEADD(day,-7,NOW()) 
-              ORDER BY p.date_add DESC";
+              FROM posts p INNER JOIN users u ON p.user_id=u.id 
+
+              WHERE p.date_add <= $date
+              ORDER BY p.upvote DESC";
             $result = mysqli_query($link, $query);
             while ($row = mysqli_fetch_array($result)) {
                 ?>
