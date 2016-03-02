@@ -18,7 +18,7 @@ include_once 'database.php';
             <li><a href="#WorstTeden">Teden</a></li>
             <li><a href="#WorstMesec">Mesec</a></li>
             <li><a href="#WorstLeto">Leto</a></li>
-            <li><a href="#WorstVse">Vse</a></li>
+            <li><a href="#tab3">Vse</a></li>
         </ul></li><li>
         <a href="#tab4">My</a></li>
     </ul>
@@ -131,8 +131,147 @@ include_once 'database.php';
             $query = "SELECT p.*, u.username 
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
 
-              WHERE p.date_add <= $date
+              WHERE p.date_add >= $date
               ORDER BY p.upvote DESC";
+            $result = mysqli_query($link, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                ?>
+                <div class="trollPicture">
+                    <span class="trollUser"><?php echo $row['username']; ?></span>
+                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                    <br />
+                    <a href="post.php?id=<?php echo $row['id']; ?>">
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                    </a>
+                    <br />
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+                    <hr />
+                </div>
+                <?php
+            }
+            ?>
+
+        </div>
+        <div id="TopMesec">
+            <?php
+            $date = date("Ymd", strtotime("-1 month"));
+            $query = "SELECT p.*, u.username 
+              FROM posts p INNER JOIN users u ON p.user_id=u.id 
+
+              WHERE p.date_add >= $date
+              ORDER BY p.upvote DESC";
+            $result = mysqli_query($link, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                ?>
+                <div class="trollPicture">
+                    <span class="trollUser"><?php echo $row['username']; ?></span>
+                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                    <br />
+                    <a href="post.php?id=<?php echo $row['id']; ?>">
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                    </a>
+                    <br />
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+                    <hr />
+                </div>
+                <?php
+            }
+            ?>
+
+        </div>
+
+        <div id="TopLeto">
+            <?php
+            $date = date("Ymd", strtotime("-1 year"));
+            $query = "SELECT p.*, u.username 
+              FROM posts p INNER JOIN users u ON p.user_id=u.id 
+
+              WHERE p.date_add >= $date
+              ORDER BY p.upvote DESC";
+            $result = mysqli_query($link, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                ?>
+                <div class="trollPicture">
+                    <span class="trollUser"><?php echo $row['username']; ?></span>
+                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                    <br />
+                    <a href="post.php?id=<?php echo $row['id']; ?>">
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                    </a>
+                    <br />
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+                    <hr />
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+
+
+        <div id="WorstTeden">
+            <?php
+            $date = date("Ymd", strtotime("-7 days"));
+            $query = "SELECT p.*, u.username 
+              FROM posts p INNER JOIN users u ON p.user_id=u.id 
+              WHERE p.date_add >= $date
+              ORDER BY p.downvote DESC";
+            $result = mysqli_query($link, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                ?>
+                <div class="trollPicture">
+                    <span class="trollUser"><?php echo $row['username']; ?></span>
+                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                    <br />
+                    <a href="post.php?id=<?php echo $row['id']; ?>">
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                    </a>
+                    <br />
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+                    <hr />
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+
+        <div id="WorstMesec">
+            <?php
+            $date = date("Ymd", strtotime("-1 month"));
+            $query = "SELECT p.*, u.username 
+              FROM posts p INNER JOIN users u ON p.user_id=u.id 
+              WHERE p.date_add >= $date
+              ORDER BY p.downvote DESC";
+            $result = mysqli_query($link, $query);
+            while ($row = mysqli_fetch_array($result)) {
+                ?>
+                <div class="trollPicture">
+                    <span class="trollUser"><?php echo $row['username']; ?></span>
+                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                    <br />
+                    <a href="post.php?id=<?php echo $row['id']; ?>">
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                    </a>
+                    <br />
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+                    <hr />
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+
+        <div id="WorstLeto">
+            <?php
+            $date = date("Ymd", strtotime("-1 year"));
+            $query = "SELECT p.*, u.username 
+              FROM posts p INNER JOIN users u ON p.user_id=u.id 
+              WHERE p.date_add >= $date
+              ORDER BY p.downvote DESC";
             $result = mysqli_query($link, $query);
             while ($row = mysqli_fetch_array($result)) {
                 ?>
