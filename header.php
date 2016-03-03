@@ -87,30 +87,29 @@ include_once 'session.php';
                             <!-- Sidebar -->
                             <section>
                                 <header>
-                                    <h2>Magna Phasellus</h2>
+                                    <h2>Stranski meni</h2>
                                 </header>
                                 <ul class="link-list">
-                                    <li><a href="#">Sed dolore viverra</a></li>
-                                    <li><a href="#">Ligula non varius</a></li>
-                                    <li><a href="#">Nec sociis natoque</a></li>
-                                    <li><a href="#">Penatibus et magnis</a></li>
-                                    <li><a href="#">Dis parturient montes</a></li>
-                                    <li><a href="#">Nascetur ridiculus</a></li>
+                                    <li><a href="#">Domov</a></li>
+                                    <li><a href="#">New</a></li>
+                                    <li><a href="#">Top</a></li>
+                                    <li><a href="#">Worst</a></li>
+                                    <li><a href="#">My</a></li>
+                                    
                                 </ul>
                             </section>
                             <section>
                                 <header>
-                                    <h2>Ipsum Dolor</h2>
+                                    <h2>Novo</h2>
                                 </header>
                                 <p>
-                                    Vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam 
-                                    iaculis. Phasellus ultrices diam sit amet orci lacinia sed consequat. 							
+                                    blablablablablalbalblalbalb							
                                 </p>
                                 <ul class="link-list">
-                                    <li><a href="#">Sed dolore viverra</a></li>
-                                    <li><a href="#">Ligula non varius</a></li>
-                                    <li><a href="#">Dis parturient montes</a></li>
-                                    <li><a href="#">Nascetur ridiculus</a></li>
+                                    <li><a href="#">Novice</a></li>
+                                    <li><a href="#">Uporabniki</a></li>
+                                    <li><a href="#">Status</a></li>
+                                    
                                 </ul>
                             </section>
 

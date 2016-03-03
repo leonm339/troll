@@ -13,8 +13,8 @@
 						<div class="8u">
 						
 							<!-- Links -->
-								<section>
-									<h2>Links to Important Stuff</h2>
+						<!--	<section> -->>
+							<!--				<h2>Links to Important Stuff</h2>
 									<div>
 										<div class="row">
 											<div class="3u">
@@ -57,7 +57,7 @@
 						<div class="4u">
 							
 							<!-- Blurb -->
-								<section>
+						<!--				<section>
 									<h2>An Informative Text Blurb</h2>
 									<p>
 										Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu 

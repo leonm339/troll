@@ -26,7 +26,7 @@ include_once 'database.php';
     <div class="tab-content">
         <div id="tab1" class="tab active">
             <?php
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username, u.email 
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
               ORDER BY p.date_add DESC";
             $result = mysqli_query($link, $query);
@@ -35,6 +35,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+					 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -51,7 +63,7 @@ include_once 'database.php';
 
         <div id="tab2" class="tab">
             <?php
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
               ORDER BY p.upvote DESC";
             $result = mysqli_query($link, $query);
@@ -60,6 +72,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -76,7 +100,7 @@ include_once 'database.php';
 
         <div id="tab3" class="tab">
             <?php
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
               ORDER BY p.downvote DESC";
             $result = mysqli_query($link, $query);
@@ -85,6 +109,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+					 		 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -101,7 +137,7 @@ include_once 'database.php';
 
         <div id="tab4" class="tab">
             <?php
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id
               WHERE p.user_id = ".$_SESSION['user_id']."
               ORDER BY p.date_add DESC";
@@ -111,6 +147,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -128,7 +176,7 @@ include_once 'database.php';
         <div id="TopTeden" >
             <?php
             $date = date("Ymd", strtotime("-7 days"));
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
 
               WHERE p.date_add >= $date
@@ -139,6 +187,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -156,7 +216,7 @@ include_once 'database.php';
         <div id="TopMesec">
             <?php
             $date = date("Ymd", strtotime("-1 month"));
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
 
               WHERE p.date_add >= $date
@@ -167,6 +227,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -185,7 +257,7 @@ include_once 'database.php';
         <div id="TopLeto">
             <?php
             $date = date("Ymd", strtotime("-1 year"));
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
 
               WHERE p.date_add >= $date
@@ -196,6 +268,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -214,7 +298,7 @@ include_once 'database.php';
         <div id="WorstTeden">
             <?php
             $date = date("Ymd", strtotime("-7 days"));
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
               WHERE p.date_add >= $date
               ORDER BY p.downvote DESC";
@@ -224,6 +308,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -241,7 +337,7 @@ include_once 'database.php';
         <div id="WorstMesec">
             <?php
             $date = date("Ymd", strtotime("-1 month"));
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
               WHERE p.date_add >= $date
               ORDER BY p.downvote DESC";
@@ -251,6 +347,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
@@ -268,7 +376,7 @@ include_once 'database.php';
         <div id="WorstLeto">
             <?php
             $date = date("Ymd", strtotime("-1 year"));
-            $query = "SELECT p.*, u.username 
+            $query = "SELECT p.*, u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
               WHERE p.date_add >= $date
               ORDER BY p.downvote DESC";
@@ -278,6 +386,18 @@ include_once 'database.php';
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
                     <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+	<?php
+	
+		
+	$email = $row['email'];
+
+//$default = "http://www.somewhere.com/homestar.jpg";
+$size = 40;
+	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
+						<img src="<?php echo $grav_url; ?>" alt="" />
+	
+
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
                         <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
