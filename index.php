@@ -34,7 +34,7 @@ include_once 'database.php';
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                   
 					 <br />
 	<?php
 	
@@ -49,11 +49,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
+					<br />
+					 <span class="trollDate"><?php echo $row['date_add']; ?></span>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -71,8 +73,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
+                  <br />
 	<?php
 	
 		
@@ -86,11 +87,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+					  <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+                   <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -108,8 +111,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
-					 		 <br />
+                    <br />
 	<?php
 	
 		
@@ -123,11 +125,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+					<span class="trollDate"><?php echo $row['date_add']; ?></span>
+					 		 <br />
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -146,7 +150,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+
 							 <br />
 	<?php
 	
@@ -161,11 +165,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+					<span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -186,7 +192,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+  
 							 <br />
 	<?php
 	
@@ -201,11 +207,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+					 <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -226,7 +234,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                
 							 <br />
 	<?php
 	
@@ -241,11 +249,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+					<span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+                   <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -267,7 +277,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                   
 							 <br />
 	<?php
 	
@@ -282,11 +292,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+					<span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+                       <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -307,7 +319,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+            
 							 <br />
 	<?php
 	
@@ -322,11 +334,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
+					<br />
+					<span class="trollDate"><?php echo $row['date_add']; ?></span>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+                   <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -346,7 +360,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
+                   
 							 <br />
 	<?php
 	
@@ -361,11 +375,14 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
+					
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+					 <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+                 <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
@@ -400,11 +417,13 @@ $size = 40;
 
                     <br />
                     <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="200"/>
+                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
                     </a>
                     <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1">Upvote (<?php echo $row['upvote']; ?>)</a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0">Downvote (<?php echo $row['downvote']; ?>)</a>
+					 <span class="trollDate"><?php echo $row['date_add']; ?></span>
+							 <br />
+                      <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
+                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
                     <hr />
                 </div>
                 <?php
