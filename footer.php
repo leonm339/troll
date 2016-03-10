@@ -13,7 +13,7 @@
 						<div class="8u">
 						
 							<!-- Links -->
-						<!--	<section> -->>
+						<!--	<section> -->
 							<!--				<h2>Links to Important Stuff</h2>
 									<div>
 										<div class="row">
