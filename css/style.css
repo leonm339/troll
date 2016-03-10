@@ -266,7 +266,7 @@ section > :last-child, .last-child
     padding:9px 15px;
     display:inline-block;
     border-radius:3px 3px 0px 0px;
-    background:#7FB5DA;
+   background: #f7f7f7 url('images/bg05.jpg');
     font-size:16px;
     font-weight:600;
     color:#4c4c4c;
@@ -274,7 +274,7 @@ section > :last-child, .last-child
 }
 
 .tab-links a:hover {
-    background:#a7cce5;
+    background: #3B4346 url('images/bg01.jpg');
     text-decoration:none;
 }
 
@@ -314,8 +314,8 @@ li.active a, li.active a:hover {
 }
 
 .tabs ul li:visited{
-    width:100%;
-    display:inline-block;
+    width:0%;
+    display:block;
 }
 
 .tabs ul a{
@@ -332,21 +332,23 @@ li.active a, li.active a:hover {
 }
 
 .tabs ul ul li{
+     
     display: block;
 }
 
 .tabs ul ul li a:visited{
     padding:9px 15px;
-    display:inline-block;
+    display:block;
     border-radius:3px 3px 0px 0px;
-    background:#7FB5DA;
+    background: #f7f7f7 url('images/bg05.jpg');
     font-size:16px;
     font-weight:600;
     color:#4c4c4c;
     transition:all linear 0.15s;
 }
 
+
 .tabs ul ul li a:hover{
-    background:#a7cce5;
+    background: #3B4346 url('images/bg01.jpg');
     text-decoration:none;
 }
