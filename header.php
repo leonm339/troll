@@ -52,7 +52,7 @@ include_once 'session.php';
                     <div class="12u">
 
                         <!-- Logo -->
-                        <h1><a href="#" id="logo">Troll</a></h1>
+                        <h1><a onclick="window.location.href='index.html'" id="logo">Troll</a></h1>
 
                         <!-- Nav -->
                         <nav id="nav">
@@ -61,6 +61,7 @@ include_once 'session.php';
                                 ?>
                                 <a href="index.php">Home</a>
                                 <a href="post_add.php">Add Troll</a>
+                                <a href="lestvica.php">Uporabniki</a>
                                 <a href="logout.php">Logout</a>
                                 <?php
                             } else {

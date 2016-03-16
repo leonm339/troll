@@ -1,4 +1,3 @@
-
 <?php
 include_once 'header.php';
 include_once 'database.php';
@@ -6,7 +5,7 @@ include_once 'database.php';
 ?>
 <div class="tabs">
     <ul class="tab-links">
-        <li class="active"><a href="#tab1">New</a></li><li>
+        <li>
         <a href="#tab2">Top</a>
         <ul>
             <li><a href="#TopTeden">Teden</a></li>
@@ -21,49 +20,9 @@ include_once 'database.php';
             <li><a href="#WorstLeto">Leto</a></li>
             <li><a href="#tab3">Vse</a></li>
         </ul></li><li>
-        <a href="#tab4">My</a></li>
     </ul>
 
     <div class="tab-content">
-        <div id="tab1" class="tab active">
-            <?php
-            $query = "SELECT p.*, u.username, u.email 
-              FROM posts p INNER JOIN users u ON p.user_id=u.id 
-              ORDER BY p.date_add DESC";
-            $result = mysqli_query($link, $query);
-            while ($row = mysqli_fetch_array($result)) {
-                ?>
-                <div class="trollPicture">
-                    <span class="trollUser"><?php echo $row['username']; ?></span>
-                   
-					 <br />
-	<?php
-	
-		
-	$email = $row['email'];
-
-//$default = "http://www.somewhere.com/homestar.jpg";
-$size = 40;
-	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
-						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-					<br />
-					 <span class="trollDate"><?php echo $row['date_add']; ?></span>
-                    <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
-                </div>
-                <?php
-            }
-            ?>
-        </div>
-
         <div id="tab2" class="tab">
             <?php
             $query = "SELECT p.*, u.username , u.email
@@ -84,18 +43,6 @@ $size = 40;
 $size = 40;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
 						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-                    <br />
-					  <span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
-                   <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
@@ -104,7 +51,7 @@ $size = 40;
 
         <div id="tab3" class="tab">
             <?php
-            $query = "SELECT p.*, u.username , u.email
+            $query = "SELECT p.*,u.username , u.email
               FROM posts p INNER JOIN users u ON p.user_id=u.id 
               ORDER BY p.downvote DESC";
             $result = mysqli_query($link, $query);
@@ -122,18 +69,6 @@ $size = 40;
 $size = 40;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
 						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-                    <br />
-					<span class="trollDate"><?php echo $row['date_add']; ?></span>
-					 		 <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
@@ -165,15 +100,6 @@ $size = 40;
 	
 
                     <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-                    <br />
-					<span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
@@ -204,18 +130,6 @@ $size = 40;
 $size = 40;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
 						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-                    <br />
-					 <span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
@@ -246,18 +160,6 @@ $size = 40;
 $size = 40;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
 						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-                    <br />
-					<span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
-                   <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
@@ -289,18 +191,6 @@ $size = 40;
 $size = 40;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
 						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-                    <br />
-					<span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
-                       <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
@@ -331,18 +221,6 @@ $size = 40;
 $size = 40;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
 						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-					<br />
-					<span class="trollDate"><?php echo $row['date_add']; ?></span>
-                    <br />
-                   <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
@@ -372,19 +250,6 @@ $size = 40;
 $size = 40;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
 						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-					
-                    <br />
-					 <span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
-                 <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
@@ -403,8 +268,7 @@ $size = 40;
                 ?>
                 <div class="trollPicture">
                     <span class="trollUser"><?php echo $row['username']; ?></span>
-                    <span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
+                    <br />
 	<?php
 	
 		
@@ -414,18 +278,6 @@ $size = 40;
 $size = 40;
 	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . "&s=" . $size;?>
 						<img src="<?php echo $grav_url; ?>" alt="" />
-	
-
-                    <br />
-                    <a href="post.php?id=<?php echo $row['id']; ?>">
-                        <img src="<?php echo $row['url']; ?>" alt="<?php echo $row['title']; ?>" width="600"/>
-                    </a>
-                    <br />
-					 <span class="trollDate"><?php echo $row['date_add']; ?></span>
-							 <br />
-                      <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=1"> <img src="http://www.olivier-follmi.net/en/_inc/gui/social/like.png"> <?php echo $row['upvote']; ?></a>
-                    <a href="post_vote.php?post_id=<?php echo $row['id']; ?>&vote=0"><img src="http://media.arabaromas.com/img/dislike.png" ><?php echo $row['downvote']; ?></a>
-                    <hr />
                 </div>
                 <?php
             }
