@@ -8,7 +8,7 @@ include_once 'database.php';
     <ul class="tab-links">
         <li class="active"><a href="#tab1">New</a></li><li>
         <a href="#tab2">Top</a>
-        <ul>
+        <ul> 
             <li><a href="#TopTeden">Teden</a></li>
             <li><a href="#TopMesec">Mesec</a></li>
             <li><a href="#TopLeto">Leto</a></li>

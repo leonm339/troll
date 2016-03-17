@@ -1,5 +1,6 @@
 <?php
 include_once 'session.php';
+
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -120,10 +121,10 @@ include_once 'session.php';
                             <!-- Main Content -->
                             <section>
                                 <?php
-                                //če imamo error v seji, ga bom izpisal
+                                //�?e imamo error v seji, ga bom izpisal
                                 if (isset($_SESSION['error'])) {
                                     echo '<div id="errorMsg">' . $_SESSION['error'] . '</div>';
-                                    //error iz seje izbrišem, da se ne ponovi več
+                                    //error iz seje izbrišem, da se ne ponovi ve�?
                                     unset($_SESSION['error']);
                                 }
                                 ?>

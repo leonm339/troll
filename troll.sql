@@ -77,6 +77,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `pass` varchar(40) NOT NULL,
   `username` varchar(50) NOT NULL,
   `avatar` varchar(50) DEFAULT NULL,
+  `usersupvote` int(11) DEFAULT '0',
+  `usersdownvote` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `username` (`username`)
